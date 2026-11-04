@@ -1,0 +1,21 @@
+# 가상환경
+.venv/
+
+# API 키 (절대 커밋 금지)
+.env
+
+# 추출된 이미지 (용량 큼)
+data/figures/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 벡터 DB
+chroma_db/
+
+# OS
+.DS_Store
