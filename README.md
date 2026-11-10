@@ -126,9 +126,11 @@ multimodal-rag/
 
 ## 6. Before / After 비교
 
-같은 질문 5개를 **텍스트 전용 RAG**(Before: 텍스트 청크만 임베딩)와 **멀티모달 RAG**(After: 텍스트·표·이미지 요약으로 검색, 원본으로 답변)에 던진 결과입니다. 출처: `notebooks/04_질의응답5건_BeforeAfter.ipynb` 실행 출력.
+같은 질문을 **텍스트 전용 RAG**(Before: 텍스트 청크만 임베딩)와 **멀티모달 RAG**(After: 텍스트·표·이미지 요약으로 검색, 원본으로 답변)에 던진 결과를 Jupyter에서 캡처했습니다 (`notebooks/03_임베딩_최종채인_연습.ipynb` 8번 셀).
 
-![Before/After 비교](docs/before_after.png)
+![Before/After 비교 (Jupyter 실행 결과 캡처)](docs/before_after.png)
+
+나머지 4개 질문(Q2~Q5)의 Before/After 출력은 `notebooks/04_질의응답5건_BeforeAfter.ipynb`에 남아 있습니다.
 
 **차이 설명**
 
