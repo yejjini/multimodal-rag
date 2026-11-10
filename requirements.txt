@@ -1,18 +1,28 @@
 # requirements.txt
-langchain>=1.0
-langchain-classic>=1.0  # MultiVectorRetriever. langchain 1.x에서 분리됨 (필수)
-langchain-openai
-langchain-community
-langchain-chroma
-langchain-experimental
-langchain-ollama
-unstructured[all-docs]
-pillow
-pydantic
-lxml
-matplotlib
-chromadb
-tiktoken
-python-dotenv
-ipykernel
-jupyterlab
+
+# --- LangChain (RAG 파이프라인의 뼈대) ---
+langchain>=1.0              # LLM 앱 핵심 프레임워크 (프롬프트·체인 연결)
+langchain-classic>=1.0      # MultiVectorRetriever. langchain 1.x에서 분리됨 (필수)
+langchain-openai            # OpenAI 모델(GPT, 임베딩) 연동
+langchain-community         # 커뮤니티 연동 모음 (로더, 도구 등)
+langchain-chroma            # Chroma 벡터 DB 연동
+langchain-experimental      # 실험 단계 기능
+langchain-ollama            # Ollama 로컬 LLM 연동
+
+# --- PDF 처리 ---
+unstructured[all-docs]      # PDF에서 텍스트·표·이미지 추출 (Poppler, Tesseract 필요)
+pillow                      # 이미지 열기·저장·변환
+lxml                        # 추출된 표(HTML) 파싱
+
+# --- 검색 / 저장 ---
+chromadb                    # 벡터 DB (임베딩 저장·유사도 검색)
+tiktoken                    # 토큰 수 계산 (텍스트 분할, 비용 계산)
+
+# --- 유틸리티 ---
+pydantic                    # 데이터 구조 정의·검증
+matplotlib                  # 이미지·결과 시각화
+python-dotenv               # .env 파일에서 API 키 불러오기
+
+# --- 노트북 실행 환경 ---
+ipykernel                   # 가상환경을 Jupyter 커널로 등록
+jupyterlab                  # 브라우저용 노트북 편집기 (VS Code만 쓰면 생략 가능)
