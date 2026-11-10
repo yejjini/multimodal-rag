@@ -43,7 +43,7 @@ flowchart LR
         VLM --> VS
     end
 
-    subgraph S3["③ 검색·생성 (03~04 노트북 · src/retriever.py)"]
+    subgraph S3["③ 검색·생성 (03 노트북 · src/retriever.py)"]
         Q([질문]) --> R[MultiVectorRetriever<br/>요약으로 검색 k=4]
         R -- doc_id --> O[원본 꺼내기]
         O --> SP{Base64?}
@@ -99,7 +99,6 @@ PDF는 `data/invest.pdf`에 둡니다 (저장소에는 포함하지 않음, DART
 | 1 | `notebooks/01_데이터추출_연습본.ipynb` | PDF → 텍스트·표·이미지 추출, 청크 분할 | `data/processed/extracted.pkl`, `figures/` |
 | 2 | `notebooks/02_요약생성_학습.ipynb` | 텍스트·표·이미지 요약 생성, 토큰 측정 | `data/processed/summaries.pkl` |
 | 3 | `notebooks/03_임베딩_최종채인_연습.ipynb` | 다중 벡터 검색기·멀티모달 체인 구성, 단일 질의 Before/After | — |
-| 4 | `notebooks/04_질의응답5건_BeforeAfter.ipynb` | **질의 5건 Before/After + 질의응답 표 (제출용)** | — |
 
 `01_데이터추출_모닝학습_시험지.ipynb`는 같은 추출 과정을 처음부터 다시 작성해 본 연습본입니다.
 
@@ -107,7 +106,7 @@ PDF는 `data/invest.pdf`에 둡니다 (저장소에는 포함하지 않음, DART
 multimodal-rag/
 ├── data/              # 원본 PDF, figures/, processed/*.pkl  (git 제외)
 ├── docs/              # README용 캡처
-├── notebooks/         # 실행 노트북 01~04, figures/ (추출된 이미지 6장)
+├── notebooks/         # 실행 노트북 01~03, figures/ (추출된 이미지 6장)
 └── src/
     ├── extract.py     # PDF 파싱·분류·청크 분할
     ├── summarize.py   # 텍스트·표·이미지 요약 체인
@@ -130,7 +129,6 @@ multimodal-rag/
 
 ![Before/After 비교 (Jupyter 실행 결과 캡처)](docs/before_after.png)
 
-나머지 4개 질문(Q2~Q5)의 Before/After 출력은 `notebooks/04_질의응답5건_BeforeAfter.ipynb`에 남아 있습니다.
 
 **차이 설명**
 
@@ -149,7 +147,6 @@ multimodal-rag/
 | 4 | 발행사의 2024년 ELS 발행 총계와 발행 잔액은? | 발행 총계 23,359억 원, 발행 잔액 2,353억 원 | **표** (발행사 파생결합증권 발행 현황) |
 | 5 | 기초자산 KOSPI200 지수의 가격 변동성은 몇 %인가요? | 34.58% | **표** (기초자산 변동성) |
 
-각 질문에서 검색된 원본 4개의 종류 구성은 04 노트북 출력에 함께 남겨 두었습니다.
 
 ## 8. 한계와 개선 방향
 
